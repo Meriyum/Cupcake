@@ -52,6 +52,7 @@ import com.example.cupcake.ui.StartOrderScreen
 
 /**
  * enum values that represent the screens in the app
+ * enum class declared as CupcakeScreen to define routes
  */
 enum class CupcakeScreen(@StringRes val title: Int) {
     Start(title = R.string.app_name),
@@ -63,6 +64,10 @@ enum class CupcakeScreen(@StringRes val title: Int) {
 /**
  * Composable that displays the topBar and displays back button if back navigation is possible.
  */
+
+//navController: An instance of the NavHostController class.
+// You can use this object to navigate between screens, for example, by calling the navigate() method to navigate to another destination.
+// You can obtain the NavHostController by calling rememberNavController() from a composable function.
 @Composable
 fun CupcakeAppBar(
     currentScreen: CupcakeScreen,
@@ -89,6 +94,9 @@ fun CupcakeAppBar(
     )
 }
 
+//A NavHost is a Composable that displays other composable destinations, based on a given route.
+//navController: An instance of the NavHostController class. You can use this object to navigate between screens, for example, by calling the navigate() method to navigate to another destination.
+// You can obtain the NavHostController by calling rememberNavController() from a composable function.
 @Composable
 fun CupcakeApp(
     viewModel: OrderViewModel = viewModel(),
